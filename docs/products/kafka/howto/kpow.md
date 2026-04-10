@@ -2,7 +2,7 @@
 title: Use Kpow with Aiven for Apache Kafka®
 ---
 
-[Kpow for Apache Kafka](https://factorhouse.io/products/kpow) is an enterprise solution for Kafka management and monitoring.
+[Kpow by Factor House](https://factorhouse.io/products/kpow) is an enterprise solution for Kafka management and monitoring.
 
 Kpow supports **Aiven for Apache Kafka®**. Use Kpow to monitor, manage, and explore your
 managed Kafka brokers, Karapace Schema Registry, and Standalone Kafka Connect services.
