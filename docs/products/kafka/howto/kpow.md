@@ -9,7 +9,7 @@ managed Kafka brokers, Karapace Schema Registry, and Standalone Kafka Connect se
 
 ## Cluster authentication
 
-Aiven supports multiple authentication mechanisms. Configure Kpow to connect using the
+Aiven supports multiple authentication methods. Configure Kpow to connect using the
 method that matches your cluster security settings.
 
 :::info
@@ -22,7 +22,7 @@ Truststore. Kpow supports raw PEM files, so no `keytool` conversion to Java Keys
 ### SASL/SCRAM
 
 Aiven supports SASL/SCRAM authentication. Find your username, password, and the specific
-SASL port in the Aiven Console on the **Connection information** page.
+ Suggest revising to: `Aiven supports SASL/SCRAM authentication. In the Aiven Console, find your username, password, and SASL port on the **Connection information** page.
 
 Set the following connection variables:
 
@@ -38,11 +38,11 @@ SSL_TRUSTSTORE_TYPE=PEM
 
 Aiven utilizes mTLS for cluster authentication. Historically, connecting a Java-based Kafka
 client required using `keytool` to convert your downloaded certificates into a Java
-Keystore format.
+Aiven uses mTLS for cluster authentication. Java-based Kafka clients often require using `keytool` to convert downloaded certificates into Java keystore format.
 
 Kpow eliminates this hurdle by providing support for raw PEM files. Do not convert your
 certificates to JKS. Use the files exactly as they are downloaded from the Aiven
-Console: `ca.pem`, `service.cert`, and `service.key`.
+Kpow supports raw PEM files directly, so you do not need to convert certificates to JKS. Use the files as downloaded from the Aiven Console: `ca.pem`, `service.cert`, and `service.key`.
 
 First, combine your access key and certificate into a single keystore file:
 
@@ -64,7 +64,7 @@ SSL_KEYSTORE_TYPE=PEM
 
 Aiven supports [OpenID Connect](/docs/products/kafka/howto/enable-oidc) for identity
 federation. If your cluster is configured for OIDC, connect Kpow using standard Kafka
-OAuth properties:
+Aiven supports [OpenID Connect](/docs/products/kafka/howto/enable-oidc) for identity federation. If your cluster uses OIDC, configure Kpow with standard Kafka OAuth properties:
 
 ```properties
 SECURITY_PROTOCOL=SASL_SSL
@@ -78,11 +78,11 @@ SSL_TRUSTSTORE_TYPE=PEM
 
 ## Access control
 
-Aiven manages data-plane authorization using **Apache Kafka ACLs**.
+Aiven uses **Apache Kafka ACLs** for data-plane authorization.
 
 After connecting Kpow using your chosen authentication method, configure the connecting
 user with the appropriate [Aiven ACLs](/docs/products/kafka/concepts/acl) to access
-topics and consumer groups.
+After connecting Kpow, configure the connecting user with the appropriate [Aiven ACLs](/docs/products/kafka/concepts/acl) to access topics and consumer groups.
 
 Kpow provides support for managing these ACLs. See the [ACL management documentation](https://docs.factorhouse.io/kpow/management/acls) for
 details.
@@ -94,7 +94,7 @@ If you have provisioned related managed services in Aiven, integrate them into K
 ### Aiven Schema Registry
 
 Aiven provides a managed Schema Registry, Karapace, that integrates with Kpow. It relies
-on Basic Authentication, `USER_INFO`.
+Aiven provides Karapace Schema Registry, which integrates with Kpow. It uses Basic Authentication (`USER_INFO`).
 
 Configure Kpow with the following properties:
 
