@@ -129,7 +129,7 @@ CONNECT_BASIC_AUTH_USER=<CONNECT_USERNAME>
 CONNECT_BASIC_AUTH_PASS=<CONNECT_PASSWORD>
 ```
 
-## Aiven specifics and limitations
+## Aiven considerations and limitations
 
 ### Retention policy fix
 
@@ -189,8 +189,8 @@ docker run -p 3000:3000 \
 ```
 
 :::info
-This guide omits Kpow authorization configuration. See
-[Simple Access Control][2] to enable necessary user actions.
+These steps do not configure Kpow authorization. To restrict user actions in Kpow, see
+[Simple Access Control][2] on the Factor House site.
 :::
 
 [2]: https://factorhouse.io/community
