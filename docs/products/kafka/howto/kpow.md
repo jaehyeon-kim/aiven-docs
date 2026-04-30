@@ -13,10 +13,9 @@ Aiven supports multiple authentication methods. Configure Kpow to connect using 
 method that matches your cluster security settings.
 
 :::info
-Regardless of the authentication mechanism, Aiven secures connections over TLS. Download
-the CA Certificate, `ca.pem`, from the Aiven Console and provide it to Kpow as your SSL
-Truststore. Kpow supports raw PEM files, so no `keytool` conversion to Java Keystores,
-`.jks`, is required.
+Aiven secures connections over TLS. Download the CA Certificate, `ca.pem`,
+from the Aiven Console and provide it to Kpow as your SSL Truststore.
+Kpow supports raw PEM files, so no `keytool` conversion to Java Keystores, `.jks`, is required.
 :::
 
 ### SASL/SCRAM
